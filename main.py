@@ -7,18 +7,13 @@ clock = pygame.time.Clock()
 if __name__ == '__main__':
 	spaceship_group = pygame.sprite.Group()
 	bullet_group = pygame.sprite.Group()
-	spaceship = Spaceship(
-		image='assets/img/spaceship.png',
-		x=int(SCREEN_WIDTH / 2),
-		y=SCREEN_HEIGHT - 100,
-		health=3
-	)
+	spaceship = Spaceship(x=int(SCREEN_WIDTH / 2), y=SCREEN_HEIGHT - 100, health=3)
 	spaceship_group.add(spaceship)
 
-	bg = pygame.image.load('assets/img/bg.png')
+	bg = pygame.image.load(IMAGE_BACKGROUND)
 	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-	pygame.display.set_caption('Space Invaders')
+	pygame.display.set_caption(TITLE_APP)
 
 	run = True
 

@@ -1,5 +1,6 @@
 from .settings import *
 from .Spaceship import Spaceship
+from .Bullets import Bullets
 
 
 __all__ = [
@@ -8,5 +9,10 @@ __all__ = [
 	'FPS',
 	'RED',
 	'GREEN',
+	'IMAGE_SPACESHIP',
+	'IMAGE_BULLET',
+	'IMAGE_BACKGROUND',
+	'TITLE_APP',
 	'Spaceship',
+	'Bullets',
 ]

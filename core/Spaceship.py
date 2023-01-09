@@ -1,11 +1,11 @@
 import pygame
-from .settings import SCREEN_WIDTH, RED, GREEN
+from core import *
 
 
 class Spaceship(pygame.sprite.Sprite):
-	def __init__(self, image: str, x: int, y: int, health: int):
+	def __init__(self, x: int, y: int, health: int):
 		pygame.sprite.Sprite.__init__(self)
-		self.image = pygame.image.load(image)
+		self.image = pygame.image.load(IMAGE_SPACESHIP)
 		self.rect = self.image.get_rect()
 		self.rect.center = [x, y]
 		self.health_start = health
@@ -20,6 +20,9 @@ class Spaceship(pygame.sprite.Sprite):
 			self.rect.x -= speed
 		if key[pygame.K_RIGHT] and self.rect.right < SCREEN_WIDTH:
 			self.rect.x += speed
+
+		if key[pygame.K_SPACE]:
+			bullet = Bullets(x=self.rect.centerx, y=self.rect.top)
 
 		color = RED
 		width = self.rect.width
